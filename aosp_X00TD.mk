@@ -9,20 +9,35 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/product_launched_with_o_mr1.mk)
 
-# Inherit some common LineageOS stuff
-$(call inherit-product, vendor/lineage/config/common_full_phone.mk)
+# Inherit some common PixelPlusUI stuff
+$(call inherit-product, vendor/aosp/config/common_full_phone.mk)
+
+TARGET_FACE_UNLOCK_SUPPORTED := true
+CUSTOM_BUILD_TYPE := OFFICIAL
+TARGET_SUPPORTS_GOOGLE_RECORDER := true
+TARGET_INCLUDE_STOCK_ACORE := true
+TARGET_INCLUDE_LIVE_WALLPAPERS := true
+TARGET_BOOT_ANIMATION_RES := 1080
 
 # Inherit from X00TD device
 $(call inherit-product, $(LOCAL_PATH)/device.mk)
 
 # Device identifier. This must come after all inclusions.
-PRODUCT_NAME := lineage_X00TD
+PRODUCT_NAME := aosp_X00TD
 PRODUCT_DEVICE := X00TD
 PRODUCT_BRAND := asus
 PRODUCT_MODEL := Zenfone Max Pro M1
 PRODUCT_MANUFACTURER := asus
 
 PRODUCT_GMS_CLIENTID_BASE := android-asus
+
+# PixelPlusUI OFFICIAL
+PRODUCT_PRODUCT_PROPERTIES += \
+    ro.ppui.device_name=Asus-Zenfone-Max-Pro-M1 \
+    ro.ppui.version=3.6 \
+    ro.ppui.version_code=Unicorn \
+    ro.ppui.is_official=true \
+    ro.ppui.maintainer_name=Pritish
 
 PRODUCT_BUILD_PROP_OVERRIDES += \
     PRODUCT_DEVICE=ASUS_X00T \
