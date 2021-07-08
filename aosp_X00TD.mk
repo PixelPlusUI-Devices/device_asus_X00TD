@@ -34,8 +34,8 @@ PRODUCT_GMS_CLIENTID_BASE := android-asus
 # PixelPlusUI OFFICIAL
 PRODUCT_PRODUCT_PROPERTIES += \
     ro.ppui.device_name=Asus-Zenfone-Max-Pro-M1 \
-    ro.ppui.version=3.6 \
-    ro.ppui.version_code=Unicorn \
+    ro.ppui.version=3.7 \
+    ro.ppui.version_code=Ragnarok \
     ro.ppui.is_official=true \
     ro.ppui.maintainer_name=Pritish
 
